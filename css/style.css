@@ -38,6 +38,13 @@ body {
   cursor: pointer;
 }
 
+.corner-image {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 20vw;
+}
+
 body.overlay {
   animation: colorChange 15s infinite;
 }

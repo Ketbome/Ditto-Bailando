@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('animated-bg');
     audio.play();
     generateRandomDittos();
+    setInterval(addCornerImage, 10000);
   });
 });
 
@@ -96,4 +97,34 @@ function generateNewDittoleft() {
   var randomDitto = createRandomDittoleft(randomSize, randomSpeed, top);
 
   dittoContainer.appendChild(randomDitto);
+}
+
+function addCornerImage() {
+  var cornerImageContainer = document.getElementById('cornerImageContainer');
+
+  var imagePaths = [
+    'img/pika.gif',
+    'img/squirtle-bailando.gif',
+    'img/pokemon-squirtle.gif',
+    'img/drake.gif',
+    'img/chari.gif',
+    'img/ash.gif'
+  ];
+
+  var randomIndex = Math.floor(Math.random() * imagePaths.length);
+  var selectedImagePath = imagePaths[randomIndex];
+
+  // Crear la imagen
+  var cornerImage = document.createElement('img');
+  cornerImage.src = selectedImagePath; // Reemplaza 'ruta-de-la-imagen' con la ruta real de la imagen
+  cornerImage.classList.add('corner-image');
+
+  // Agregar la imagen al contenedor
+  cornerImageContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar la imagen
+  cornerImageContainer.appendChild(cornerImage);
+
+  // Establecer un temporizador para eliminar la imagen después de 5 segundos
+  setTimeout(function() {
+    cornerImageContainer.innerHTML = ''; // Eliminar la imagen del contenedor
+  }, 5000);
 }
