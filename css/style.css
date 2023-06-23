@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   display: block;
+  overflow-x: hidden;
 }
 
 .dance-container {
@@ -46,7 +47,9 @@ body.overlay {
 }
 
 body.animated-bg {
-  animation: colorChange 10s infinite;
+  animation: colorChange 10s infinite, colorBorder 10s infinite;
+  border: 30px solid;
+  box-sizing: border-box;
 }
 
 @keyframes colorChange {
@@ -93,69 +96,87 @@ body.animated-bg {
 
 @keyframes colorBorder {
   0% {
-    border-color: #f06292;
+    border-color: #ff00ff;
   }
 
   10% {
-    border-color: #ff3399;
+    border-color: #f06292;
   }
 
   20% {
-    border-color: #ff6666;
+    border-color: #ff3399;
   }
 
   30% {
-    border-color: #ff9933;
+    border-color: #ff6666;
   }
 
   40% {
-    border-color: #ffff00;
+    border-color: #ff9933;
   }
 
   50% {
-    border-color: #00ff00;
+    border-color: #ffff00;
   }
 
   60% {
-    border-color: #00ffff;
+    border-color: #00ff00;
   }
 
   70% {
-    border-color: #0066ff;
+    border-color: #00ffff;
   }
 
   80% {
-    border-color: #3300ff;
+    border-color: #0066ff;
   }
 
   90% {
+    border-color: #3300ff;
+  }
+
+  100% {
     border-color: #9900ff;
   }
-
-  100% {
-    border-color: #ff00ff;
-  }
 }
 
-#dittoContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.random-ditto {
+.random-ditto-right {
   position: absolute;
-  animation: moveDitto linear infinite;
+  animation: moveDittoRight linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
-@keyframes moveDitto {
+.random-ditto-left {
+  position: absolute;
+  animation: moveDittoLeft linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes moveDittoRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(70vw);
   }
-  
+
+  50% {
+    transform: translateX(-70vw);
+  }
+
   100% {
-    transform: translateX(-100%);
+    transform: translateX(70vw);
+  }
+}
+
+@keyframes moveDittoLeft {
+  0% {
+    transform: translateX(-70vw);
+  }
+
+  50% {
+    transform: translateX(70vw);
+  }
+
+  100% {
+    transform: translateX(-70vw);
   }
 }
