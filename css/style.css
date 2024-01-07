@@ -9,12 +9,15 @@ body {
 }
 
 .dance-container {
-  height: 100%;
-  margin: 0;
+  margin: 40px;
+  height: calc(100% - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 30px;
   pointer-events: none;
+  animation: colorContainer 10s infinite;
+  box-sizing: content-box;
 }
 
 #dittoContainer{
@@ -42,6 +45,7 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  z-index: 3;
 }
 
 .corner-image {
@@ -60,9 +64,7 @@ body.overlay {
 }
 
 body.animated-bg {
-  animation: colorChange 10s infinite, colorBorder 10s infinite;
-  border: 30px solid;
-  box-sizing: border-box;
+  animation: colorChange 10s infinite;
 }
 
 @keyframes colorChange {
@@ -107,49 +109,49 @@ body.animated-bg {
   }
 }
 
-@keyframes colorBorder {
+@keyframes colorContainer {
   0% {
-    border-color: #ff00ff;
+    background-color: #ff00ff;
   }
 
   10% {
-    border-color: #f06292;
+    background-color: #f06292;
   }
 
   20% {
-    border-color: #ff3399;
+    background-color: #ff3399;
   }
 
   30% {
-    border-color: #ff6666;
+    background-color: #ff6666;
   }
 
   40% {
-    border-color: #ff9933;
+    background-color: #ff9933;
   }
 
   50% {
-    border-color: #ffff00;
+    background-color: #ffff00;
   }
 
   60% {
-    border-color: #00ff00;
+    background-color: #00ff00;
   }
 
   70% {
-    border-color: #00ffff;
+    background-color: #00ffff;
   }
 
   80% {
-    border-color: #0066ff;
+    background-color: #0066ff;
   }
 
   90% {
-    border-color: #3300ff;
+    background-color: #3300ff;
   }
 
   100% {
-    border-color: #9900ff;
+    background-color: #9900ff;
   }
 }
 

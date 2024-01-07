@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
   audio.controls = false;
 });
 
+var audio = document.getElementById("konga-audio");
+audio.volume = 0.3; // Set the volume to 50%
+
 document.addEventListener('DOMContentLoaded', function() {
   var startButton = document.getElementById('startButton');
   var overlay = document.getElementById('overlay');
